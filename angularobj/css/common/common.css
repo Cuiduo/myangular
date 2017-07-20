@@ -1,0 +1,59 @@
+.tcdPageCode{padding: 15px 20px;text-align: left;color: #ccc;float: right;}
+.tcdPageCode a{display: inline-block;color: #428bca;display: inline-block;height: 25px;	line-height: 25px;	padding: 0 10px;border: 1px solid #ccc;	margin: 0 2px;border-radius: 4px;vertical-align: middle;}
+.tcdPageCode a:hover{text-decoration: none;background-color: #DDDDDD;}
+.tcdPageCode span.current{display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;color: #fff;background-color: #DDDDDD;border-radius: 4px;vertical-align: middle;}
+.tcdPageCode span.disabled{	display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;	color: #bfbfbf;background: #f2f2f2;border: 1px solid #bfbfbf;border-radius: 4px;vertical-align: middle;}
+.tcdPageCode2{padding: 15px 20px;text-align: left;color: #ccc;float: right;}
+.tcdPageCode2 a{display: inline-block;color: #428bca;display: inline-block;height: 25px;	line-height: 25px;	padding: 0 10px;border: 1px solid #ccc;	margin: 0 2px;border-radius: 4px;vertical-align: middle;}
+.tcdPageCode2 a:hover{text-decoration: none;background-color: #DDDDDD;}
+.tcdPageCode2 span.current{display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;color: #fff;background-color: #DDDDDD;border-radius: 4px;vertical-align: middle;}
+.tcdPageCode2 span.disabled{	display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;	color: #bfbfbf;background: #f2f2f2;border: 1px solid #bfbfbf;border-radius: 4px;vertical-align: middle;}
+.tcdPageCode2 span.current{display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;color: #fff;background-color: #DDDDDD;border-radius: 4px;vertical-align: middle;}
+.tcdPageCode2 span.disabled{	display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;	color: #bfbfbf;background: #f2f2f2;border: 1px solid #bfbfbf;border-radius: 4px;vertical-align: middle;}
+/*公共样式*/
+.topBox{height: 80px;width: 98%;margin: 0 auto;margin-bottom: 10px;	background: #FFFFFF;/*line-height: 80px;*/}
+.topBox p{width: 96%;margin: 0 auto;line-height: 80px;/*padding-top: 25px;*/}
+/*.topBox span{
+	color: #FFFFFF;
+}*/
+#editer{background: #18AD90;color: #FFFFFF;width: 100px;height: 30px;margin: 0 20px 3px 0;cursor: pointer;}
+.deletebtn{	background: red;color: #FFFFFF;padding: 7px 38px;width: 100px;height: 30px;margin-top: 2px;}
+.downbtn{	background: #19B2DE;color: #FFFFFF;padding: 7px 38px;width: 100px;height: 30px;margin-top: 2px;margin-right: 20px;}
+/*--------------------蒙版--------------------------*/
+.cower{	width: 100%;height: 100%;z-index: 1000;background: #000;position: fixed;left: 0;top: 0;opacity: .5;display: none;}
+/*----------------------页码----------------------------*/	
+.pageDiv{padding: 15px 20px;float: left;}
+.total{padding: 0 5px;}
+.logout{cursor: pointer;}
+.logout:hover{color: #FF0000;}
+.ymqd{padding:2px 7px;border: 1px solid #CCCCCC;}
+.ymqd:hover{background: #FF0000;color: #FFFFFF;cursor: pointer;}
+.pageNum{width: 24px;height: 20px;border: 1px solid #A3A3A3;margin: 0 5px;text-align: center;}
+
+.pageDiv2{padding: 15px 20px;float: left;}
+.total2{padding: 0 5px;}
+.logout2{cursor: pointer;}
+.logout2:hover{color: #FF0000;}
+.ymqd2{padding:2px 7px;border: 1px solid #CCCCCC;}
+.ymqd2:hover{background: #FF0000;color: #FFFFFF;cursor: pointer;}
+.pageNum2{width: 24px;height: 20px;border: 1px solid #A3A3A3;margin: 0 5px;text-align: center;}
+
+/*-------------删除按钮的弹窗---------------*/
+.deleteBox{display: none;z-index: 1002;width: 360px;height: 220px;border: 1px solid #C4C4C4;position: absolute;left: 50%;top: 50%;margin-left: -180px;margin-top: -110px;border-radius: 5px;text-align: center;
+background: #FFFFFF;}
+.deleteBox p{padding-top: 50px;font-size: 16px;}
+.deleteBox .deleteDiv{width: 100%;position: absolute;bottom: 20px;text-align: center;padding: 10px 0;}
+.deleteBox input{width: 100px;height: 30px;cursor: pointer;color: #FFFFFF;margin: 0 20px;}
+#deleteIt{background: red;color: #FFFFFF;}
+#cencel{background: #CCCCCC;color: #000000;}
+.checkcl img,.changecl img,.deletecl img{cursor: pointer;width: 20px;height: 20px;vertical-align: middle;}
+.deleteBox h3{width: 98%; line-height: 48px; text-align: center; font-size: 18px; font-weight: 500; margin: 0 auto; border-bottom: 1px solid #CCCCCC;}
+/*操作*/
+.checkcl img,.changecl img,.deletecl img{cursor: pointer;width: 20px;height: 20px;vertical-align: middle;}
+.tiplit{color: #FF0000;display: none;}
+/*---------没有搜索数据-----------*/
+.nomsg{text-align:center;line-height:30px;width:100%}
+.showNum{width: 100px;float: right;line-height: 30px;border: 1px solid #AAAAAA;margin-top: 25px;margin-left: 20px;height: 32px;}
+.search{width: 200px;float: right;line-height: 30px;border: 1px solid #AAAAAA;margin-top: 25px;padding-left: 4px;}
+.seachbtn{width: 66px;float: right;line-height: 30px;margin-top: 25px;border: none;color: #FFFFFF;background: #E40014;}
+.citys{width: 44px;height: 24px;text-align: center;}

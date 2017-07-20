@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/common/base.css" />
+		<link rel="stylesheet" href="css/forgot.css" />
+	</head>
+	<body>
+		<div class="logoTop">
+			.
+		</div>
+		<div class="logoBox">
+			<div class="logoQ">
+				<img src="images/logo@2x.png"/><span>修改密码</span>
+			</div>
+			
+			<div class="logoDiv">
+				
+				<div class="loginBox">
+					<div class="loginLeft">
+						<div>
+							<p>
+								<input type="text" id="userName" placeholder="请输入账号" />
+							</p>
+							<p style="position: relative;">
+								 <input type="text" class="code" placeholder="验证码" />
+							<input type="button" class="getCode" value="获取验证码" />	 
+							</p>
+							<p>
+								<input type="password" id="passWord" placeholder="请输入新密码" />
+							</p>
+							<p>
+								<input type="password" id="passWord2" placeholder="请再次输入新密码" />
+							</p>
+						</div>
+						
+						<span>两次输入的密码不一致</span>
+						<div class="tips">
+						
+						</div>
+						<p style="text-align: center;">
+							<input type="button" id="login" value="登录" />
+						</p>
+						
+					</div>
+					<div class="loginRight">
+						<img src="images/logoin@2x.png"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="src/jquery-2.2.1.min.js"></script>
+	<script src="templatejs/common.js"></script>
+	<script src="src/md5.js"></script>
+	<script src="templatejs/forgot.js"></script>
+</html>

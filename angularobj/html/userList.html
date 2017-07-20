@@ -1,0 +1,746 @@
+<style>
+	
+	.tipBox{
+		display: none;
+		width: 700px;
+		height: 660px;
+		background: #FFFFFF;
+		position: fixed;
+		/*overflow-y: scroll;*/
+		top: 50%;
+		left: 50%;
+		margin-top: -330px;
+		margin-left: -350px;
+		border-radius: 6px;
+		z-index: 1001;
+	}
+	.tipDiv{
+		width: 700px;
+		height: 660px;
+		position: relative;
+		left: 0;
+		top: 0;
+	}
+	.tipBox input,select,textarea{
+		border: 1px solid #C4C4C4;
+		/*border-radius: 5px;*/
+	}
+	.tipBox .tipTop{	
+		width: 700px;
+	}
+	.tipBox .tipTop h3{
+		width: 98%;
+		line-height: 48px;
+		text-align: center;
+		font-size: 18px;
+		font-weight: 500;
+		margin: 0 auto;
+		border-bottom: 1px solid #CCCCCC;
+	}
+	.tipBox .tipTop .closebtn{
+		margin: 10px;
+		float: right;
+		width: 28px;
+		height: 28px;
+		border-radius: 50%;
+		border: none;
+		background: #CCCCCC;
+		font-size: 16px;
+		font-weight: 600;
+		color: #FFFFFF;
+	}
+	.tipBox .tipTop .closebtn:hover{
+		background: #D91600;
+		color: #FFFFFF;
+	}
+	.qqmsg{
+		padding-top: 30px;
+		width: 90%;		
+		margin: 0 auto;		
+	}
+	
+	.qqmsg .qqmsgn{		
+		/*height: 600px;*/
+		width: 100%;
+		margin: 0 auto;
+		/*width: 50%;
+		min-height: 90px;
+		float: left;
+		padding-top: 20px;*/
+	}
+	.qqmsg .qqmsgn dl{width: 50%;float: left;line-height: 20px;margin: 10px 0 ;}
+	.qqmsg .qqmsgn dl dt{float: left;width: 30%;margin-left: 0%;}
+	.qqmsg .qqmsgn dl dd{float: left;width: 65%;overflow: hidden;}
+	.usernam{width: ;height: 24px;}
+	.tshi{
+		color: red;
+		margin-left: 10px;
+		display: none;
+	}
+	
+	.selecter{
+		width: ;
+		height: 24px;
+	}
+	
+	
+	#confirm{
+		position: absolute;
+		bottom: 60px;
+		left: 40px;
+		width: 100px;
+		height: 30px;
+		cursor: pointer;
+		color: #FFFFFF;
+		background: red;
+	}
+	#off{
+		position: absolute;
+		right: 10px;
+		bottom:-360px;
+		width: 60px;
+		height: 20px;
+		cursor: pointer;
+	}
+	/*----------------------修改-------------------------*/
+	.tipBox2{
+		display: none;
+		width: 700px;
+		height: 660px;
+		background: #FFFFFF;
+		position: fixed;
+		/*overflow-y: scroll;*/
+		top: 50%;
+		left: 50%;
+		margin-top: -330px;
+		margin-left: -350px;
+		border-radius: 6px;
+		z-index: 1001;
+	}
+	.tipBox2 input,select,textarea{
+		border: 1px solid #C4C4C4;
+		/*border-radius: 5px;*/
+	}
+	.tipBox2 .tipTop{	
+		width: 700px;
+	}
+	.tipBox2 .tipTop h3{
+		width: 98%;
+		line-height: 48px;
+		text-align: center;
+		font-size: 18px;
+		font-weight: 500;
+		margin: 0 auto;
+		border-bottom: 1px solid #CCCCCC;
+	}
+	.tipBox2 .tipTop .closebtn2{
+		margin: 10px;
+		float: right;
+		width: 28px;
+		height: 28px;
+		border-radius: 50%;
+		border: none;
+		background: #CCCCCC;
+		font-size: 16px;
+		font-weight: 600;
+		color: #FFFFFF;
+	}
+	.tipBox2 .tipTop .closebtn2:hover{
+		background: #D91600;
+		color: #FFFFFF;
+	}
+	#confirm2{
+		position: absolute;
+		bottom: 60px;
+		left: 40px;
+		width: 100px;
+		height: 30px;
+		cursor: pointer;
+		color: #FFFFFF;
+		background: red;
+	}
+	/*----------------------修改-------------------------*/
+	.tipBox3{
+		display: none;
+		width: 700px;
+		height: 660px;
+		background: #FFFFFF;
+		position: fixed;
+		/*overflow-y: scroll;*/
+		top: 50%;
+		left: 50%;
+		margin-top: -330px;
+		margin-left: -350px;
+		border-radius: 6px;
+		z-index: 1001;
+	}
+	
+	.tipBox3 input,select,textarea{
+		border: 1px solid #C4C4C4;
+		/*border-radius: 5px;*/
+	}
+	.tipBox3 .tipTop{	
+		width: 700px;
+	}
+	.tipBox3 .tipTop h3{
+		width: 98%;
+		line-height: 48px;
+		text-align: center;
+		font-size: 18px;
+		font-weight: 500;
+		margin: 0 auto;
+		border-bottom: 1px solid #CCCCCC;
+	}
+	.tipBox3 .tipTop .closebtn3{
+		margin: 10px;
+		float: right;
+		width: 28px;
+		height: 28px;
+		border-radius: 50%;
+		border: none;
+		background: #CCCCCC;
+		font-size: 16px;
+		font-weight: 600;
+		color: #FFFFFF;
+	}
+	.tipBox3 .tipTop .closebtn3:hover{
+		background: #D91600;
+		color: #FFFFFF;
+	}
+	#confirm3{
+		position: absolute;
+		bottom: 60px;
+		left: 40px;
+		width: 100px;
+		height: 30px;
+		cursor: pointer;
+		color: #FFFFFF;
+		background: red;
+	}
+	
+	.main{
+		width: 96%;	
+		margin: 0 auto;
+		border: 1px solid #D8D8D8;
+	}
+	.main .tabBox{
+		width: 100%;
+	}
+	.main .tabTop td{
+		text-align: center;
+		line-height: 50px;
+		border-left: 1px solid #D8D8D8;
+		border-bottom: 1px solid #D8D8D8;
+	}
+	.main .tabTop td:nth-of-type(1){
+		
+		border-left: none;
+	}
+	.tabBox td{
+		text-align: center;
+		line-height: 40px;
+		border-left: 1px solid #D8D8D8;
+		border-bottom: 1px solid #D8D8D8;
+	}
+	.tabBox td:nth-of-type(1){
+		border-left: none;
+	}
+	
+	table{border-collapse:collapse;table-layout:fixed;overflow: scroll;word-break: keep-all;width: 100%;min-height: 52px;}
+	table td{empty-cells : show}	
+	.sex{width: 71%;height: 26px;}
+	.sex2{width: 71%;height: 26px;}
+	.juese{width: 71%;height: 26px;}
+	.juese2{width: 71%;height: 26px;}
+	.filer{width: 30%;height: 26px;z-index: 11;position: absolute;left: 0;opacity: 0;filter: alpha(opacity=0);}
+	.posit{position: relative;left: 0;height: 70px;background: pink;}
+	.choosepic{width: 60px;position: absolute;left: 0;z-index: 10;top: 0;border: 1px solid #CCCCCC;}		
+</style>
+<!---------------------删除按钮------------------------>
+		<div class="deleteBox">
+			<h3>提示</h3>
+			<p>确认删除</p>
+			<div class="deleteDiv">
+				<input type="button" class="deleter" id="deleteIt" value="确定" />
+				<input type="button" class="deleter" id="cencel" value="取消" />
+			</div>
+		</div>
+<!-------------------新增弹窗------------------->
+	<div class="tipBox">
+		<div class="tipDiv">
+			<div class="tipTop">
+					<h3>新增用户<button class="closebtn">×</button></h3>			
+					<!--<input type="button" name="" id="off" value="取消" />-->
+				</div>		
+				
+				<div class="qqmsg">					
+					<div class="qqmsgn">					
+						<dl>
+							<dt>账户名称 :</dt>
+							<dd><input type="text" class="usernam" id="userName" value="" />
+							<i class="ts"></i></dd>
+						</dl>
+						<dl>
+							<dt>密码 :<i class="ts1"></i></dt>
+							<dd>							
+								<input class="usernam password" type="password" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>姓名 :<i class="ts2"></i></dt>
+							<dd>							
+								<input class="selecter xingming" type="text" id="diqu" value="" />
+							</dd>
+						</dl>
+						
+						<dl>
+							<dt>身份证号 :</dt>
+							<dd>
+								<input class="usernam userIdCard" type="text" value="" /><br />
+								<i class="ts9"></i>
+							</dd>
+						</dl>
+						<dl>
+							<dt>性别 :</dt>
+							<dd>
+								<select class="sex" name="">
+									<option value="男">男</option>
+									<option value="女">女</option>
+								</select>
+							</dd>
+						</dl>	
+						<dl>
+							<dt>联系电话 :</dt>
+							<dd>
+								<input class="usernam" type="tel" name="email" " id="userTel" value="" />
+							</dd>
+						</dl>
+						<!--<dl>
+							<dt>头像 :</dt>
+							<dd class="posit">
+								
+								<form enctype="multipart/form-data" method="post">									
+									<input class="filer" type="file" />
+								</form>
+								<span class="choosepic">选择文件</span>
+							</dd>
+						</dl>-->
+						<dl>
+							<dt>地址 :</dt>
+							<dd>
+								<div id="address" style="" name="">
+									<select class="prov"></select> 
+				                    <select class="city" disabled="disabled"></select>
+				                    <select class="dist" disabled="disabled" style="display: none;"></select>
+								</div>								
+							</dd>
+						</dl>
+						<dl>
+							<dt>详细地址 :<i class="ts3"></i></dt>
+							<dd>
+								<input class="usernam xxdz" type="text" />								
+							</dd>
+						</dl>
+						<dl>
+							<dt>角色 :<i class="ts4"></i></dt>
+							<dd>
+								<select class="juese" name=""></select>
+							</dd>
+						</dl>						
+						
+						<!--<dl>
+							<dt>代理商级别 :</dt>
+							<dd>
+								<select class="sex" name="">
+									<option value="男">男</option>
+									<option value="女">女</option>
+								</select>
+							</dd>
+						</dl>-->
+						<dl>
+							<dt>民族 :</dt>
+							<dd>
+								<input class="usernam"  type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>营业执照 :</dt>
+							<dd>
+								<input class="usernam businessLicense" type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>企业名称 :</dt>
+							<dd>
+								<input class="usernam companyName" type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>公司地址 :</dt>
+							<dd>
+								<input class="usernam companyAdress" type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>公司邮箱 :</dt>
+							<dd>
+								<input class="usernam companyEmail" type="text" value="" />
+							</dd>							
+						</dl>
+						<dl>
+							<dt>公司联系人 :</dt>
+							<dd>
+								<input class="usernam companyPersion1" type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>联系人电话 :</dt>
+							<dd>
+								<input class="usernam companyTel" type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>公司官网 :</dt>
+							<dd>
+								<input class="usernam companyWebsite" type="text" value="" />
+							</dd>
+						</dl>						
+					</div>	
+				<input type="button" id="confirm" value="确定" />
+		</div>
+		</div>
+				
+	</div>
+<!----------------------------修改弹窗--------------------------------->
+
+<div class="tipBox2">
+		<div class="tipDiv">
+			<div class="tipTop">
+					<h3>用户信息修改<button class="closebtn2">×</button></h3>	
+				</div>		
+				
+				<div class="qqmsg">					
+					<div class="qqmsgn">					
+						<dl>
+							<dt>账户名称 :</dt>
+							<dd><input disabled="disabled" type="text" class="usernam" id="userName2" value="" />
+							<i class="ts"></i></dd>
+						</dl>
+						<dl>
+							<dt>密码 :<i class="ts1"></i></dt>
+							<dd>							
+								<input class="usernam password2" type="password" value="123456" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>姓名 :<i class="ts2"></i></dt>
+							<dd>							
+								<input class="selecter xingming2" type="text" id="diqu" value="" />
+							</dd>
+						</dl>
+						
+						<dl>
+							<dt>身份证号 :</dt>
+							<dd>
+								<input class="usernam userIdCard2" type="text" value="" /><br />
+								<i class="ts9"></i>
+							</dd>
+						</dl>
+						<dl>
+							<dt>性别 :</dt>
+							<dd>
+								<select class="sex2" name="">
+									<option value="男">男</option>
+									<option value="女">女</option>
+								</select>
+							</dd>
+						</dl>	
+						<dl>
+							<dt>联系电话 :</dt>
+							<dd>
+								<input class="usernam" type="tel" name="email" id="userTel2" value="" />
+							</dd>
+						</dl>
+						<!--<dl>
+							<dt>头像 :</dt>
+							<dd class="posit">
+								
+								<form enctype="multipart/form-data" method="post">									
+									<input class="filer" type="file" />
+								</form>
+								<span class="choosepic">选择文件</span>
+							</dd>
+						</dl>-->
+						<dl>
+							<dt>地址 :</dt>
+							<dd>
+								<div id="address2" style="" name="">
+									<select class="prov" style="width: 50px;"></select> 
+				                    <select class="city" disabled="disabled"></select>
+				                    <select class="dist" disabled="disabled"></select>
+								</div>								
+							</dd>
+						</dl>
+						<dl>
+							<dt>详细地址 :<i class="ts3"></i></dt>
+							<dd>
+								<input class="usernam xxdz2" type="text" />								
+							</dd>
+						</dl>
+						<dl>
+							<dt>角色 :<i class="ts4"></i></dt>
+							<dd>
+								<select class="juese2" name=""></select>
+							</dd>
+						</dl>						
+						
+						<!--<dl>
+							<dt>代理商级别 :</dt>
+							<dd>
+								<select class="sex" name="">
+									<option value="男">男</option>
+									<option value="女">女</option>
+								</select>
+							</dd>
+						</dl>-->
+						<dl>
+							<dt>民族 :</dt>
+							<dd>
+								<input class="usernam minzu"  type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>营业执照 :</dt>
+							<dd>
+								<input class="usernam businessLicense2" type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>企业名称 :</dt>
+							<dd>
+								<input class="usernam companyName2" type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>公司地址 :</dt>
+							<dd>
+								<input class="usernam companyAdress2" type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>公司邮箱 :</dt>
+							<dd>
+								<input class="usernam companyEmail2" type="text" value="" />
+							</dd>							
+						</dl>
+						<dl>
+							<dt>公司联系人 :</dt>
+							<dd>
+								<input class="usernam companyPersion12" type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>联系人电话 :</dt>
+							<dd>
+								<input class="usernam companyTel2" type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>公司官网 :</dt>
+							<dd>
+								<input class="usernam companyWebsite2" type="text" value="" />
+							</dd>
+						</dl>						
+					</div>	
+				<input type="button" id="confirm2" value="确定" />
+		</div>
+		</div>
+				
+	</div>
+
+<!--------------------查看弹窗------------------------->
+<div class="tipBox3">
+		<div class="tipDiv">
+			<div class="tipTop">
+					<h3>用户信息修改<button class="closebtn3">×</button></h3>	
+				</div>		
+				
+				<div class="qqmsg">					
+					<div class="qqmsgn">					
+						<dl>
+							<dt>账户名称 :</dt>
+							<dd><input disabled="disabled" type="text" class="usernam" id="userName3" value="" />
+							<i class="ts"></i></dd>
+						</dl>
+						<dl>
+							<dt>密码 :<i class="ts1"></i></dt>
+							<dd>							
+								<input class="usernam password3" disabled="disabled" type="password" value="123456" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>姓名 :<i class="ts2"></i></dt>
+							<dd>							
+								<input class="selecter xingming3" disabled="disabled" type="text" id="diqu" value="" />
+							</dd>
+						</dl>
+						
+						<dl>
+							<dt>身份证号 :</dt>
+							<dd>
+								<input class="usernam userIdCard3" disabled="disabled" type="text" value="" /><br />
+								<i class="ts9"></i>
+							</dd>
+						</dl>
+						<dl>
+							<dt>性别 :</dt>
+							<dd>
+								<input disabled="disabled" class="usernam sex3" />
+									
+							</dd>
+						</dl>	
+						<dl>
+							<dt>联系电话 :</dt>
+							<dd>
+								<input class="usernam" type="tel" name="email" disabled="disabled" id="userTel3" value="" />
+							</dd>
+						</dl>
+						<!--<dl>
+							<dt>头像 :</dt>
+							<dd class="posit">
+								
+								<form enctype="multipart/form-data" method="post">									
+									<input class="filer" type="file" />
+								</form>
+								<span class="choosepic">选择文件</span>
+							</dd>
+						</dl>-->
+						<dl>
+							<dt>地址 :</dt>
+							<dd>
+								<div id="address3" style="" name="">
+									<i><input type="text" name="" value="" class="userProvince3 citys" readonly="readonly" /></i>
+									<i><input type="text" name="" value="" class="userCity3 citys" readonly="readonly" /></i>
+									<i><input type="text" name="" value="" class="userDistrict3 citys" readonly="readonly" /></i>
+								</div>								
+							</dd>
+						</dl>
+						<dl>
+							<dt>详细地址 :<i class="ts3"></i></dt>
+							<dd>
+								<input class="usernam xxdz3" disabled="disabled" type="text" />								
+							</dd>
+						</dl>
+						<dl>
+							<dt>角色 :<i class="ts4"></i></dt>
+							<dd>
+								<input type="text" disabled="disabled" class="usernam juese3" />
+							</dd>
+						</dl>						
+						
+						<!--<dl>
+							<dt>代理商级别 :</dt>
+							<dd>
+								<select class="sex" name="">
+									<option value="男">男</option>
+									<option value="女">女</option>
+								</select>
+							</dd>
+						</dl>-->
+						<dl>
+							<dt>民族 :</dt>
+							<dd>
+								<input class="usernam minzu3"  type="text" disabled="disabled" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>营业执照 :</dt>
+							<dd>
+								<input class="usernam businessLicense3" disabled="disabled" type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>企业名称 :</dt>
+							<dd>
+								<input class="usernam companyName3" disabled="disabled" type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>公司地址 :</dt>
+							<dd>
+								<input class="usernam companyAdress3" disabled="disabled" type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>公司邮箱 :</dt>
+							<dd>
+								<input class="usernam companyEmail3" disabled="disabled" type="text" value="" />
+							</dd>							
+						</dl>
+						<dl>
+							<dt>公司联系人 :</dt>
+							<dd>
+								<input class="usernam companyPersion13" disabled="disabled" type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>联系人电话 :</dt>
+							<dd>
+								<input class="usernam companyTel3" disabled="disabled" type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>公司官网 :</dt>
+							<dd>
+								<input class="usernam companyWebsite3" disabled="disabled" type="text" value="" />
+							</dd>
+						</dl>						
+					</div>	
+				<input type="button" id="confirm3" value="返回" />
+		</div>
+		</div>
+				
+	</div>
+
+<!----------------------顶部------------------------>
+<div class="mainTop">
+	<p style="width: 96%;margin: 0 auto;line-height: 30px;border-bottom: 2px solid #B3B3B3;">用户列表</p>
+</div>
+<!----------------tianjia----------------->
+<section>
+	<div class="topBox">
+		<p>
+			<input type="button" name="editer" id="editer" value="+添加" />
+			<a class="downbtn">下载</a>
+			<a class="deletebtn">删除</a><span class="tiplit">请选择要删除的选项</span>
+			<select class="showNum">
+				<option value="1">展示20条数据</option>
+				<option value="2">展示50条数据</option>
+				<option value="3">展示100条数据</option>
+			</select>
+			<button class="seachbtn">搜索</button><input class="search" type="text" placeholder="请输入要搜索的内容" />			
+		</p>		
+	</div>			
+</section>		
+<!-----------main------------>
+<div class="main">			
+	<div class="tabBox">
+		<table cellpadding="0" cellspacing="0" class="tablist"></table>
+	<p class="nomsg"></p>
+	</div>			
+</div>	
+<div class="pageDiv">		
+	<span>
+		去第<input class="pageNum pageNum2" type="text" />页
+	</span>
+	<span>共<i class="total total2"></i>页</span>
+	<span class="ymqd">确定</span>
+</div>
+<div class="tcdPageCode2"></div>
+<script src="src/jquery.page.js"></script>
+<script src="src/jquery.cityselect.js"></script>
+<script src="src/jquery-editable-select.min.js"></script>
+<script>
+		
+	</script>
+	

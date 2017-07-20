@@ -1,0 +1,478 @@
+<style>	
+	/*----------新建弹窗------------*/
+	.tipBox{display: none;width: 700px;height: 660px;background: #FFFFFF;position: fixed;top: 50%;left: 50%;margin-top: -280px;margin-left: -350px;border-radius: 6px;z-index: 1001;}
+	.tipDiv{width: 700px;height: 660px;position: relative;left: 0;top: 0;}	
+	.tipBox input,select,textarea{border: 1px solid #C4C4C4;}
+	.tipBox .tipTop{width: 700px;}
+	.tipBox .tipTop h3{	width: 98%;line-height: 48px;text-align: center;font-size: 18px;font-weight: 500;margin: 0 auto;border-bottom: 1px solid #CCCCCC;}
+	.tipBox .tipTop .closebtn{margin: 10px;float: right;width: 28px;height: 28px;border-radius: 50%;border: none;background: #CCCCCC;font-size: 20px;font-weight: 600;color: #FFFFFF;}
+	.tipBox .tipTop .closebtn:hover{background: #D91600;color: #FFFFFF;}
+	.qqmsg{padding-top: 30px;width: 90%;margin: 0 auto;}	
+	.qqmsg .qqmsgn{	width: 100%;margin: 0 auto;}
+	.qqmsg .qqmsgn dl{width: 50%;float: left;line-height: 20px;margin: 10px 0}
+	.qqmsg .qqmsgn dl dt{float: left;width: 30%;margin-left: 0%;}
+	.qqmsg .qqmsgn dl dd{float: left;width: 65%;overflow: hidden;}
+	.usernam{width: ;height: 24px;}
+	.tshi{color: red;margin-left: 10px;display: none;}	
+	.selecter{height: 24px;}	
+	#confirm{position: absolute;bottom: 60px;left: 40px;width: 100px;height: 30px;	cursor: pointer;color: #FFFFFF;	background: red;}
+	
+	/*---------------查看弹窗------------------*/
+	.tipBox3{display: none;width: 700px;height: 660px;background: #FFFFFF;position: fixed;top: 50%;left: 50%;margin-top: -280px;margin-left: -350px;border-radius: 6px;z-index: 1001;}
+	.tipBox3 input,select,textarea{border: 1px solid #C4C4C4;}
+	.tipBox3 .tipTop{width: 700px;}
+	.tipBox3 .tipTop h3{	width: 98%;line-height: 48px;text-align: center;font-size: 18px;font-weight: 500;margin: 0 auto;border-bottom: 1px solid #CCCCCC;}
+	.tipBox3 .tipTop .closebtn3{margin: 10px;float: right;width: 28px;height: 28px;border-radius: 50%;border: none;background: #CCCCCC;font-size: 20px;font-weight: 600;color: #FFFFFF;}
+	.tipBox3 .tipTop .closebtn3:hover{background: #D91600;color: #FFFFFF;}
+	
+	#confirm3{position: absolute;bottom: 60px;left: 40px;width: 100px;height: 30px;	cursor: pointer;color: #FFFFFF;	background: red;}
+	
+	/*----------------------修改-------------------------*/
+	.tipBox2{display: none;width: 700px;height: 660px;background: #FFFFFF;position: fixed;top: 50%;left: 50%;margin-top: -280px;margin-left: -350px;border-radius: 6px;z-index: 1001;}	
+	.tipBox2 input,select,textarea{	border: 1px solid #C4C4C4;}
+	.tipBox2 .tipTop{width: 700px;}
+	.tipBox2 .tipTop h3{width: 98%;line-height: 48px;text-align: center;font-size: 18px;font-weight: 500;margin: 0 auto;border-bottom: 1px solid #CCCCCC;}
+	.tipBox2 .tipTop .closebtn2{margin: 10px;float: right;width: 28px;height: 28px;border-radius: 50%;border: none;background: #CCCCCC;font-size: 20px;font-weight: 600;color: #FFFFFF;}
+	.tipBox2 .tipTop .closebtn2:hover{background: #D91600;color: #FFFFFF;}	
+	#confirm2{position: absolute;bottom: 60px;left: 40px;width: 100px;height: 30px;	cursor: pointer;color: #FFFFFF;background: red;}
+	.main{width: 96%;margin: 0 auto;border: 1px solid #D8D8D8;}	
+	.main .tabBox{width: 100%;height: 699px;overflow-y: scroll;}
+	.main .tabTop td{text-align: center;line-height: 50px;border-left: 1px solid #D8D8D8;border-bottom: 1px solid #D8D8D8;}
+	.main .tabTop td:nth-of-type(1){border-left: none;}
+	.tabBox td{	text-align: center;	line-height: 40px;border-left: 1px solid #D8D8D8;border-bottom: 1px solid #D8D8D8;}
+	.tabBox td:nth-of-type(1){border-left: none;}	
+	table{border-collapse:collapse;}
+	table .tabTop{table-layout:fixed}
+	table td{empty-cells : show}
+	/*---------没有搜索数据-----------*/
+	.nomsg{	text-align:center;line-height:30px;width:100%}
+	.search{width: 200px;float: right;line-height: 30px;border: 1px solid #AAAAAA;margin-top: 25px;padding-left: 4px;}
+	.seachbtn{width: 66px;float: right;line-height: 30px;margin-top: 25px;border: none;color: #FFFFFF;background: #E40014;}
+	.sex{width: 71%;height: 26px;}
+	.sex2{width: 71%;height: 26px;}
+	.juese{width: 71%;height: 26px;}
+	.juese2{width: 71%;height: 26px;}
+	.filer{width: 30%;height: 26px;z-index: 11;position: absolute;left: 0;opacity: 0;filter: alpha(opacity=0);}
+	.posit{position: relative;left: 0;height: 70px;background: pink;}
+	.choosepic{width: 60px;position: absolute;left: 0;z-index: 10;top: 0;border: 1px solid #CCCCCC;}
+	.checkcl,.changecl,.deletecl{cursor: pointer;}
+	.checkcl:hover{color: #2A8AD4;}
+	.changecl:hover{color: #2293C4;}
+	.deletecl:hover{color: #E40014;}
+	.tiplit{color: #FF0000;display: none;}
+	.orderForm{display: none;z-index: 1002;width: 360px;height: 220px;border: 1px solid #C4C4C4;position: fixed;left: 50%;top: 50%;margin-left: -180px;margin-top: -110px;border-radius: 5px;text-align: center;background: #FFFFFF;}
+	.orderForm h3{width: 98%; line-height: 48px; text-align: center; font-size: 18px; font-weight: 500; margin: 0 auto; border-bottom: 1px solid #CCCCCC;}
+	.orderForm input{width: 100px;height: 30px;cursor: pointer;color: #FFFFFF;margin: 0 20px;}
+	.orderForm .confirmDiv{padding-top: 30px;}
+	.orderForm p{padding-top: 50px;font-size: 16px;}
+	.payNow{background: red;color: #FFFFFF;}
+	.payNo{background: #CCCCCC;color: #000000;}	
+</style>
+<!------------------------订单确认弹窗-------------------------->
+<div class="orderForm">
+	<h3>订单信息</h3>
+	<p>支付金额:<span></span></p>
+	<div class="confirmDiv">
+		<input type="button" class="payNow"  value="立即支付" />
+		<input type="button" class="payNo"  value="稍后支付" />
+	</div>
+</div>
+<!---------------------删除按钮------------------------>
+		<div class="deleteBox">
+			<h3>提示</h3>
+			<p>确认删除</p>
+			<div class="deleteDiv">
+				<input type="button" class="deleter" id="deleteIt" value="确定" />
+				<input type="button" class="deleter" id="cencel" value="取消" />
+			</div>
+		</div>
+<!-------------------新增弹窗------------------->
+	<div class="tipBox">
+		<div class="tipDiv">
+			<div class="tipTop">
+					<h3>新增订单<button class="closebtn">×</button></h3>
+				</div>		
+				
+				<div class="qqmsg">					
+					<div class="qqmsgn">					
+						<dl>
+							<dt>分类 :</dt>
+							<dd>
+								<select class="sex spmc providerName" name=""></select>
+							</dd>
+						</dl>
+						<dl>
+							<dt>供应商类别 :</dt>
+							<dd>
+								<input type="text" readonly="readonly" class="usernam fenlei"/>
+							</dd>
+						</dl>
+						<dl>
+							<dt>资费计划 :<i class="ts1"></i></dt>
+							<dd>							
+								<select class="sex zfjh" name=""></select>
+							</dd>
+						</dl>
+						<dl>
+							<dt>单价 :<i class="ts2"></i></dt>
+							<dd>							
+								<input readonly="readonly" class="selecter danjia" type="text" value="" />
+							</dd>
+						</dl>
+						
+						<dl>
+							<dt>数量 :</dt>
+							<dd>
+								<input class="usernam amountNum" type="text" placeholder="只能输入数字"  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+							</dd>
+						</dl>
+						<dl>
+							<dt>总价 :</dt>
+							<dd>
+								<input readonly="readonly" class="usernam totalPrice" type="text" value="" />
+							</dd>
+						</dl>	
+						<dl>
+							<dt>地址 :</dt>
+							<dd>
+								<div id="address" style="" name="">
+									<select class="prov"></select> 
+				                    <select class="city" disabled="disabled"></select>
+				                    <select class="dist" disabled="disabled"></select>
+								</div>								
+							</dd>
+						</dl>
+						<dl>
+							<dt>联系人姓名 :</dt>
+							<dd>
+								<input class="usernam contactName" type="tel" name="email" value="" />
+							</dd>
+						</dl>
+						<!--<dl>
+							<dt>头像 :</dt>
+							<dd class="posit">
+								
+								<form enctype="multipart/form-data" method="post">									
+									<input class="filer" type="file" />
+								</form>
+								<span class="choosepic">选择文件</span>
+							</dd>
+						</dl>-->
+						
+						
+						<dl>
+							<dt>联系人电话 :<i class="ts3"></i></dt>
+							<dd>
+								<input onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" class="usernam contactTel" type="tel" />								
+							</dd>
+						</dl>
+						<dl>
+							<dt>详细地址 :<i class="ts"></i></dt>
+							<dd>
+								<input class="usernam addressDet" type="text" />								
+							</dd>
+						</dl>
+						
+						<dl>
+							<dt>邮编 :<i class="ts4"></i></dt>
+							<dd>
+								<input class="usernam orderState" type="text" />		
+							</dd>
+						</dl>
+						<dl>
+							<dt>备注 :</dt>
+							<dd>
+								<input class="usernam remark"  type="text" value="" />
+							</dd>
+						</dl>											
+					</div>	
+				<input type="button" id="confirm" value="提交订单" />
+		</div>
+		</div>
+				
+	</div>
+<!------------------------查看---------------------------->
+<div class="tipBox3">
+		<div class="tipDiv">
+			<div class="tipTop">
+					<h3>新增订单<button class="closebtn3">×</button></h3>
+				</div>		
+				
+				<div class="qqmsg">					
+					<div class="qqmsgn">					
+						<dl>
+							<dt>商品名称 :</dt>
+							<dd>
+								<select class="sex spmc3" name=""></select>
+							</dd>
+						</dl>
+						<dl>
+							<dt>资费计划 :<i class="ts1"></i></dt>
+							<dd>							
+								<select class="sex zfjh3" name=""></select>
+							</dd>
+						</dl>
+						<dl>
+							<dt>单价 :<i class="ts2"></i></dt>
+							<dd>							
+								<input readonly="readonly" class="selecter danjia3" type="text" value="" />
+							</dd>
+						</dl>
+						
+						<dl>
+							<dt>数量 :</dt>
+							<dd>
+								<input class="usernam amountNum3" type="text" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>总价 :</dt>
+							<dd>
+								<input readonly="readonly" class="usernam totalPrice3" type="text" value="" />
+							</dd>
+						</dl>	
+						<dl>
+							<dt>联系人姓名 :</dt>
+							<dd>
+								<input class="usernam contactName3" type="tel" name="email" value="" />
+							</dd>
+						</dl>
+						<!--<dl>
+							<dt>头像 :</dt>
+							<dd class="posit">
+								
+								<form enctype="multipart/form-data" method="post">									
+									<input class="filer" type="file" />
+								</form>
+								<span class="choosepic">选择文件</span>
+							</dd>
+						</dl>-->
+						
+						<dl>
+							<dt>地址 :</dt>
+							<dd>
+								<div id="address3" style="" name="">
+									<i><input type="text" name="" value="" class="userProvince3 citys" readonly="readonly" /></i>
+									<i><input type="text" name="" value="" class="userCity3 citys" readonly="readonly" /></i>
+									<i><input type="text" name="" value="" class="userDistrict3 citys" readonly="readonly" /></i>
+								</div>								
+							</dd>
+						</dl>
+						<dl>
+							<dt>联系人电话 :<i class="ts3"></i></dt>
+							<dd>
+								<input class="usernam contactTel3" type="tel" />								
+							</dd>
+						</dl>
+						<dl>
+							<dt>详细地址 :<i class="ts"></i></dt>
+							<dd>
+								<input class="usernam addressDet3" type="text" />								
+							</dd>
+						</dl>
+						
+						<dl>
+							<dt>邮编 :<i class="ts4"></i></dt>
+							<dd>
+								<input class="usernam orderState3" type="text" />		
+							</dd>
+						</dl>
+						<dl>
+							<dt>备注 :</dt>
+							<dd>
+								<input class="usernam remark3"  type="text" value="" />
+							</dd>
+						</dl>											
+					</div>	
+				<input type="button" id="confirm3" value="返回" />
+		</div>
+		</div>
+				
+	</div>
+<!----------------------------修改弹窗------------------------------>
+
+<div class="tipBox2">
+		<div class="tipDiv">
+			<div class="tipTop">
+					<h3>修改<button class="closebtn2">×</button></h3>	
+				</div>		
+				
+				<div class="qqmsg">					
+					<div class="qqmsgn">					
+						<dl>
+							<dt>账户名称 :</dt>
+							<dd><input disabled="disabled" type="text" class="usernam" id="userName2" value="" />
+							<i class="ts"></i></dd>
+						</dl>
+						<dl>
+							<dt>密码 :<i class="ts1"></i></dt>
+							<dd>							
+								<input class="usernam password2" type="password" value="123456" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>姓名 :<i class="ts2"></i></dt>
+							<dd>							
+								<input class="selecter xingming2" type="text" id="diqu" value="" />
+							</dd>
+						</dl>
+						
+						<dl>
+							<dt>身份证号 :</dt>
+							<dd>
+								<input class="usernam userIdCard2" type="text" value="" /><br />
+								<i class="ts9"></i>
+							</dd>
+						</dl>
+						<dl>
+							<dt>性别 :</dt>
+							<dd>
+								<select class="sex2" name="">
+									<option value="男">男</option>
+									<option value="女">女</option>
+								</select>
+							</dd>
+						</dl>	
+						<dl>
+							<dt>联系电话 :</dt>
+							<dd>
+								<input class="usernam" type="tel" name="email" id="userTel2" value="" />
+							</dd>
+						</dl>
+						<!--<dl>
+							<dt>头像 :</dt>
+							<dd class="posit">
+								
+								<form enctype="multipart/form-data" method="post">									
+									<input class="filer" type="file" />
+								</form>
+								<span class="choosepic">选择文件</span>
+							</dd>
+						</dl>-->
+						<dl>
+							<dt>地址 :</dt>
+							<dd>
+								<div id="address2" style="" name="">
+									<select class="prov" style="width: 50px;"></select> 
+				                    <select class="city" disabled="disabled"></select>
+				                    <select class="dist" disabled="disabled"></select>
+								</div>								
+							</dd>
+						</dl>
+						<dl>
+							<dt>详细地址 :<i class="ts3"></i></dt>
+							<dd>
+								<input class="usernam xxdz2" type="text" />								
+							</dd>
+						</dl>
+						<dl>
+							<dt>角色 :<i class="ts4"></i></dt>
+							<dd>
+								<select class="juese2" name=""></select>
+							</dd>
+						</dl>						
+						
+						<!--<dl>
+							<dt>代理商级别 :</dt>
+							<dd>
+								<select class="sex" name="">
+									<option value="男">男</option>
+									<option value="女">女</option>
+								</select>
+							</dd>
+						</dl>-->
+						<dl>
+							<dt>民族 :</dt>
+							<dd>
+								<input class="usernam minzu"  type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>营业执照 :</dt>
+							<dd>
+								<input class="usernam businessLicense2" type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>企业名称 :</dt>
+							<dd>
+								<input class="usernam companyName2" type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>公司地址 :</dt>
+							<dd>
+								<input class="usernam companyAdress2" type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>公司邮箱 :</dt>
+							<dd>
+								<input class="usernam companyEmail2" type="text" value="" />
+							</dd>							
+						</dl>
+						<dl>
+							<dt>公司联系人 :</dt>
+							<dd>
+								<input class="usernam companyPersion12" type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>联系人电话 :</dt>
+							<dd>
+								<input class="usernam companyTel2" type="text" value="" />
+							</dd>
+						</dl>
+						<dl>
+							<dt>公司官网 :</dt>
+							<dd>
+								<input class="usernam companyWebsite2" type="text" value="" />
+							</dd>
+						</dl>						
+					</div>	
+				<input type="button" id="confirm2" value="确定" />
+		</div>
+		</div>
+				
+	</div>
+
+
+
+<!----------------------顶部------------------------>
+<div class="mainTop">
+	<p style="width: 96%;margin: 0 auto;line-height: 30px;border-bottom: 2px solid #B3B3B3;">账单列表</p>
+</div>
+<!----------------tianjia----------------->
+<section>
+	<div class="topBox">
+		<p>
+			<input type="button" name="editer" id="editer" value="+添加" />
+			<a class="downbtn">下载</a>
+			<a class="deletebtn">删除</a><span class="tiplit">请选择要删除的选项</span>
+			<select class="showNum">
+				<option value="20">展示20条数据</option>
+				<option value="50">展示50条数据</option>
+				<option value="100">展示100条数据</option>
+			</select>
+			<button class="seachbtn">搜索</button><input class="search" type="text" placeholder="请输入要搜索的内容" />			
+		</p>		
+	</div>			
+</section>		
+<!-----------main------------>
+<div class="main">			
+	<div class="tabBox">
+		<table cellpadding="0" cellspacing="0" style="overflow: scroll;word-break: keep-all;width: 100%;min-height: 52px;" class="tablist"></table>
+	<p class="nomsg"></p>
+	</div>			
+</div>	
+<div class="pageDiv">		
+	<span>
+		去第<input class="pageNum" type="text" value="0" />页
+	</span>
+	<span>共<i class="total">0</i>页</span>
+	<span class="ymqd">确定</span>
+</div>
+<div class="tcdPageCode"></div>
+<script src="src/jquery.page.js"></script>
+<script src="src/jquery.cityselect.js"></script>
+<script src="src/jquery-editable-select.min.js"></script>

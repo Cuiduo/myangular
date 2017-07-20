@@ -1,0 +1,80 @@
+<div class="searchBox">
+	<table cellpadding="0" cellspacing="0" style="overflow: scroll;word-break: keep-all;width: 100%;" class="tablist"></table>	
+	<img src="img/logonPage.jpg"/>
+</div>
+jQuery('.qqq input:eq(0)').focus();
+	changess(0);
+	function changess(numbers){
+		jQuery('.qqq input:eq('+numbers+')').bind('input propertychange', function() {
+			/*alert("aaa");*/
+			var aaa = jQuery('.qqq input:eq('+numbers+')').val();
+			if(aaa.indexOf('/n')!= -1){
+				jQuery('.qqq input:eq('+numbers+')').val(jQuery('.qqq input:eq('+numbers+')').val().substring(0,jQuery('.qqq input:eq('+numbers+')').val().length-2));
+				jQuery(".qqq").append("<input type='text'  class='decrition_inp inp'/><br />");
+				for(var o=jQuery('.qqq input').length-2;o>numbers;o--){
+					jQuery('.qqq input:eq('+(o+1)+')').val(jQuery('.qqq input:eq('+o+')').val());
+					jQuery('.qqq input:eq('+o+')').val("");
+				}
+				jQuery('.qqq input:eq('+(numbers+1)+')').focus();
+				forInput();
+				changess(jQuery('.qqq input').length-1);
+			}
+		});
+		jQuery('.qqq input:eq('+numbers+')').keypress(function(e){
+	 		var e = e || window.event;  
+			if(e.keyCode == 13){ 
+			   	jQuery(".qqq").append("<input type='text'  class='decrition_inp inp'/><br />");
+				for(var o=jQuery('.qqq input').length-2;o>numbers;o--){
+					jQuery('.qqq input:eq('+(o+1)+')').val(jQuery('.qqq input:eq('+o+')').val());
+					jQuery('.qqq input:eq('+o+')').val("");
+				}
+				jQuery('.qqq input:eq('+(numbers+1)+')').focus();
+				forInput();
+				changess(jQuery('.qqq input').length-1);
+			}
+		})
+		jQuery('.qqq input:eq('+numbers+')').keydown(function(e){
+	 	 	var e = e || window.event; 
+	 	 	if(e.keyCode==8){
+			  	if(jQuery('.qqq input:eq('+numbers+')').val()==""&&numbers!=0){
+			  		jQuery('.qqq input:eq('+(numbers-1)+')').val(jQuery('.qqq input:eq('+(numbers-1)+')').val()+(jQuery('.qqq input:eq('+(numbers-1)+')').val().substring(jQuery('.qqq input:eq('+(numbers-1)+')').val().length-1,jQuery('.qqq input:eq('+(numbers-1)+')').val().length)));
+			  		for(var o=numbers+1;o<jQuery('.qqq input').length;o++){
+						jQuery('.qqq input:eq('+(o-1)+')').val(jQuery('.qqq input:eq('+o+')').val());
+					}
+			  		jQuery('.qqq input:eq('+(jQuery('.qqq input').length-1)+')').val("");
+			  		jQuery('.qqq input:eq('+(numbers-1)+')').focus();
+			  		forInput();
+			  	}
+		 	}
+	 	 	if(e.keyCode==46){
+			  	if(jQuery('.qqq input:eq('+numbers+')').val()==""){
+			  		for(var o=numbers+1;o<jQuery('.qqq input').length;o++){
+						jQuery('.qqq input:eq('+(o-1)+')').val(jQuery('.qqq input:eq('+o+')').val());
+					}
+			  		jQuery('.qqq input:eq('+(jQuery('.qqq input').length-1)+')').val("");
+			  		jQuery('.qqq input:eq('+numbers+')').focus();
+			  		forInput();
+			  	}
+		 	}
+		})
+	}
+	
+	function forInput(){
+		var bbb = 0;
+		var ccc;
+		for(var i=0;i<(jQuery('.qqq input').length-1);i++){
+			ccc = true;
+			for(var j=(jQuery('.qqq input').length-1)-1;j>i;j--){
+				if((jQuery('.qqq input:eq('+i+')').val())==(jQuery('.qqq input:eq('+j+')').val())
+				&&(jQuery('.qqq input:eq('+i+')').val())!=""){
+					ccc = false;
+//										jQuery('.qqq input:eq('+i+')').val("重复了！");
+					jQuery('.qqq input:eq('+j+')').css('color','red');
+				}
+			}
+			if(ccc){
+				bbb+=1;
+			}
+		}
+		jQuery('.haomany').html(bbb);
+	}

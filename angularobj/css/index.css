@@ -1,0 +1,157 @@
+html{width: 100%;height: 100%;}
+body{}
+
+/*------iconfont--------*/
+@font-face { font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_xdy8p2lbqtfn7b9.eot');
+  src: url('//at.alicdn.com/t/font_xdy8p2lbqtfn7b9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_xdy8p2lbqtfn7b9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_xdy8p2lbqtfn7b9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_xdy8p2lbqtfn7b9.svg#iconfont') format('svg');
+}
+header{width: 100%;min-width: 999px;height: 72px;}
+.logoBox{width: 98% ;margin: 0 auto;font-size: 16px;height: 70px;}
+.payBox{width: 16%;height: 70px;float: left;}
+.phoneBox{width: 16%;height: 70px;float: left;line-height: 70px;}
+.topBottom{	width: 280px;float: right;line-height: 70px;height: 70px;}
+.logoPic{float: left;height: 70px;vertical-align: middle;line-height: 70px;width: 26%;}
+.logoPic img{vertical-align: text-top;width: 40%;margin-right: 2%;}
+.logoPic .logoName{border-left: 2px solid #A3A3A3;}
+.payBox div{position: relative;left: 0;top: 0;float: left;vertical-align: middle;height: 70px;width: 90px;}
+.payBox .yuepic{width: 30px;padding-left: 30px;	vertical-align: middle;	padding-top: 22px;cursor: pointer;}
+.payBox i{position: absolute;right: 0;top: 10px;background: #AE2739;display: block;border-radius: 30px;font-size: 12px;color: #FFFFFF;padding: 1px 5px;}
+.payBox .money{float: left;line-height: 70px;}
+.payHover{display: block;position: relative;left: 0;top: 0;width: 100px;height: 60px;cursor: pointer;}
+.payHover .payNower{position: absolute;left: 80%;width: 80px;height:60px;top: 10%;background: url(../images/payTip.png) no-repeat center;text-align: center;line-height: 60px;color: #FFFFFF;background-size: 100%;font-size: 12px;z-index: 1;display: none;cursor: pointer;}
+.phoneBox img{width: 30px;vertical-align: middle;cursor: pointer;}
+header .topBottom img{vertical-align: middle;width: 30px;cursor: pointer;}
+header .topBottom p{line-height: 30px;}
+header .topBottom p .logout{background: pink;width: 100px;padding:0 20px;background: url(../img/leave.png) no-repeat right;background-size: 20%;}
+header .topBottom p .logout:hover{text-decoration: underline;cursor: pointer;color: #2B89D3;}
+header .topBottom p i,span{padding: 0 5px;}
+.mainmain{width: 100%;min-width: 999px;margin: 0px auto;padding-left: calc(100vw – 100%);}
+.listLeft{float: left;width: 10%;min-height:880px;background: #253643;overflow: hidden;	}
+.listLeft h2{height: 46px;line-height: 46px;padding-left: 16px;font-weight: 500;font-size: 16px;color: #FFFFFF;background: #3A4D5C;}
+.listLeft ul {width: 100%;}
+.listLeft ul .listli{width: 100%; width: 86%;padding-left: 12%;}
+.listful li:last-child{border:none;}
+.listLeft ul li a {height: 50px;line-height: 50px;font-size: 14px;color: #ACB5BF;}
+.icon,.icon2,.icon3,.icon4,.icon5,.icon6,.icon7,.icon8,.icon9,.icon10,.icon11,.icon12,.icon13,.icon14,.icon15,.icon16,.icon17{vertical-align: baseline;font-family: 'iconfont';font-size: 14px;}
+.listli .tips4{width: 10%;vertical-align: baseline;padding-left: 5%;}
+.listli .tips5{display: none;width: 10%;vertical-align: baseline;padding-left: 5%;}
+.listli{position: relative;top: 0;left: 0;}
+.listli .lista{width: 100%;display: block;}
+.icon1{font-family: 'iconfont';font-size: 16px;position: absolute;
+	right: 5%;
+	
+	/*padding-left:4% ;*/
+}
+.listli .listfula{
+	color: #ACB5BF;
+	font-size: 12px;
+}
+.listFirst .listli .listful li{   
+    /*border-top: 1px solid #CCCCCC;*/    
+    padding-left: 19%;
+}
+.listli div{
+    border:none;
+    display:none;
+}
+/*--------right-------*/
+#right{
+	width: 90%;
+	min-height: 880px;
+	float: right;
+	background: #FFFFFF;
+	position: relative;
+	left: 0;	
+	top: 0;
+	overflow: hidden;
+}
+.tipBox0{
+	display: none;
+	width: 700px;
+	height: 360px;
+	background: #FFFFFF;
+	position: fixed;
+	/*overflow-y: scroll;*/
+	top: 50%;
+	left: 50%;
+	margin-top: -180px;
+	margin-left: -350px;
+	border-radius: 6px;
+	z-index: 1001;
+}
+.tipDiv0{
+	width: 700px;
+	height: 360px;
+	position: relative;
+	left: 0;
+	top: 0;
+}
+.tipBox0 input,select,textarea{
+	border: 1px solid #C4C4C4;
+	/*border-radius: 5px;*/
+}
+.tipBox0 .tipTop{	
+	width: 700px;
+}
+.tipBox0 .tipTop0 h3{
+	width: 98%;
+	line-height: 48px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 500;
+	margin: 0 auto;
+	border-bottom: 1px solid #CCCCCC;
+}
+.tipBox0 .tipTop0 .closebtn0{
+	margin: 10px;
+	float: right;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	border: none;
+	background: #CCCCCC;
+	font-size: 20px;
+	font-weight: 600;
+	color: #FFFFFF;
+}
+.tipBox0 .tipTop0 .closebtn0:hover{
+	background: #D91600;
+	color: #FFFFFF;
+}
+.qqmsg0{
+	padding-top: 30px;
+	width: 90%;		
+	margin: 0 auto;		
+}
+
+.qqmsg0 .qqmsgn0{		
+	/*height: 600px;*/
+	width: 100%;
+	margin: 0 auto;
+	/*width: 50%;
+	min-height: 90px;
+	float: left;
+	padding-top: 20px;*/
+}
+.qqmsg0 .qqmsgn0 dl{width: 100%;line-height: 20px;margin: 10px 0 ;height: 40px;}
+.qqmsg0 .qqmsgn0 dl dt{float: left;width: 16%;margin-left: 0%;}
+.qqmsg0 .qqmsgn0 dl dd{float: left;width: 70%;overflow: hidden;}
+.payMent{border: 1px solid #CCCCCC;width: 90px;height: 30px;display: block;float: left;margin-right: 10px;cursor: pointer;}
+.payMent:hover{border: 1px solid #288DF0;}
+.moneyNum{border: 1px solid #CCCCCC;height: 30px;width: 60px;display: block;float: left;line-height: 30px;margin: 0 2px;}
+.moneyNum:nth-of-type(6){width: 100px;}
+.moneyNum:nth-of-type(6) input{width: 40px;}
+.moneyNum input{width: 20px;height: 14px;border: none;margin-bottom: 2px;}
+.payMent img{width: 90px;height: 30px;}
+#confirm0{position: absolute;bottom: 60px;left: 40px;width: 100px;height: 30px;cursor: pointer;color: #FFFFFF;background: red;}	
+.chongzhiBox{display: none;z-index: 1002;width: 360px;height: 220px;border: 1px solid #C4C4C4;position: fixed;left: 50%;top: 50%;margin-left: -180px;margin-top: -110px;border-radius: 5px;text-align: center;background: #FFFFFF;}
+.chongzhiBox h3{width: 98%; line-height: 48px; text-align: center; font-size: 18px; font-weight: 500; margin: 0 auto; border-bottom: 1px solid #CCCCCC;}
+.chongzhiBox input{width: 100px;height: 30px;cursor: pointer;color: #FFFFFF;margin: 0 20px;}
+.chongzhiBox .confirmDiv0{padding-top: 30px;}
+.chongzhiBox p{padding-top: 50px;font-size: 16px;}
+.payNow0{background: red;color: #FFFFFF;}
+.payNo0{background: #CCCCCC;color: #000000;}	

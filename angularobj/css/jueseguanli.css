@@ -1,0 +1,248 @@
+.tipBox{
+		display: none;
+		width: 700px;
+		height: 400px;
+		background: #FFFFFF;
+		position: fixed;
+		overflow-y: scroll;
+		top: 50%;
+		left: 50%;
+		margin-top: -200px;
+		margin-left: -350px;
+		border-left: 3px solid #E8E8E8;
+		z-index: 1001;
+		border-bottom: 36px solid #E8E8E8;
+	}
+	.tipBox input,select,textarea{
+		border: 1px solid #C4C4C4;
+	}
+	.tipBox .tipTop{
+		position: fixed;	
+		width: 700px;
+	}
+	.tipBox .tipTop h3{
+		line-height: 28px;
+		padding-left: 10px;
+		background: #E8E8E8;	
+	}
+	.tipBox .tipTop .closebtn{
+		float: right;
+		width: 28px;
+		height: 28px;
+		border: none;
+		background: #F2F2F2;
+		font-size: 20px;
+	}
+	.tipBox .tipTop .closebtn:hover{
+		border: 1px solid #D91600;
+		background: #D91600;
+		color: #FFFFFF;
+	}
+	.qqmsg{
+		width: 98%;
+		margin: 0 auto;
+		min-height: 36px;
+		overflow: hidden;
+	}
+	
+	.qqmsg h4{
+		line-height: 26px;
+		color: #E40014;
+		padding-left: 20px;
+	}
+	.qqmsg .qqmsgn{
+		width: 50%;
+		/*background: #F8F8F8;*/
+		min-height: 50px;
+		float: left;
+		padding-top: 20px;
+	}
+	.qqmsgr{
+		height: 216px;
+	}
+	
+	#opn{
+		width: 140px;
+		height: 26px;
+	}
+	.qqmsg .qqmsgn dl{
+		width: 100%;
+		line-height: 36px;
+	}
+	.qqmsg .qqmsgn dl dt{
+		float: left;
+		width: 36%;
+		padding-left: 10px;
+	}
+	.qqmsg .qqmsgn dl dt dd{
+		float: right;
+	}
+	.qqmsg .qqmsgn dl .usernam{
+		width: 158px;
+		line-height: 22px;
+		background: #ffffff;
+	}
+	#remark{
+		border: 1px solid #C4C4C4;
+		width: 500px;
+		height: 100px;
+		margin: 30px;
+	}
+	
+	.tshi{
+		color: red;
+		margin-left: 10px;
+		display: none;
+	}
+	#implementDate{
+		width: 110px;
+	}
+	#mradress{
+		margin-left: 10px;
+	}
+	#J-xl-2-btn{
+		width: 26px;
+		height: 22px;
+		margin-left: 2px;
+		border-radius: 5px;
+	}
+	.selecter{
+		width: 162px;
+		height: 22px;
+	}
+	
+	
+	#confirm{
+		position: absolute;
+		right: 80px;
+		bottom: -400px;
+		width: 60px;
+		height: 20px;
+		cursor: pointer;
+	}
+	#off{
+		position: absolute;
+		right: 10px;
+		bottom:-400px;
+		width: 60px;
+		height: 20px;
+		cursor: pointer;
+	}
+	.confirm2{
+		position: absolute;
+		right: 80px;
+		bottom: -400px;
+		width: 60px;
+		height: 20px;
+		cursor: pointer;
+	}
+	#off2{
+		position: absolute;
+		right: 10px;
+		bottom:-400px;
+		width: 60px;
+		height: 20px;
+		cursor: pointer;
+	}
+	#editer{
+		display: block;
+	}
+	/*-------------删除按钮的弹窗---------------*/
+	.deleteBox{
+		display: none;
+		z-index: 1002;
+		width: 300px;
+		height: 160px;
+		border: 1px solid #C4C4C4;
+		border-top: 30px solid #E40014;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: -150px;
+		margin-top: -80px;
+		border-radius: 5px;
+		text-align: center;
+		background: #FFFFFF;
+	}
+	.deleteBox i{
+		position: absolute;
+		top: -24px;
+		left: 136px;
+		color: #FFFFFF;
+		font-size: 16px;
+	}
+	.deleteBox p{	
+		padding-top: 50px;
+	}
+	.deleteBox .deleteDiv{
+		width: 100%;
+		position: absolute;
+		bottom: 20px;
+		text-align: center;
+		padding: 10px 0;
+	}
+	.deleteBox input{
+		margin: 0 10px;
+		width: 60px;
+		height: 20px;
+		border-radius: 5px;
+		cursor: pointer;
+		background: #E3E6E7;
+	}
+	#deleteIt:hover{
+		background: #E40014;	
+		color: #FFFFFF;
+	}
+	#cencel:hover{
+		background: #9D9D9D;
+	}
+	/*-------------------表格-------------------------*/
+.main{
+	width: 100%;
+	margin: 0 auto;
+}
+.main .tabBox{
+	overflow: scroll;
+	width: 100%;
+}
+.main .tabTop td{
+	text-align: center;
+	line-height: 30px;
+	padding: 0 14px;
+	background: #ccc;
+	border-left: 1px solid #AAAAAA;
+}
+.tabBox td{
+	text-align: center;
+	line-height: 26px;
+	padding: 0 14px;
+	border-left: 1px solid #AAAAAA;
+}
+.tabBox tr:nth-child(odd){
+	background: #E0ECFF;
+}
+.checkcl,.changecl,.deletecl{
+	padding: 0 20px;
+	cursor: pointer;
+}
+.checkcl:hover{
+	color: #2A8AD4;
+}
+.changecl:hover{
+	color: #2293C4;
+}
+.deletecl:hover{
+	color: #E40014;
+}
+table
+{
+	border-collapse:collapse;
+}
+table td
+{
+	empty-cells : show
+}
+ul.ztree {margin-top: 10px;border: 1px solid #CCCCCC;width:90%;height:360px;overflow: auto;margin: 0 auto;}
+.ztree li span.button.ico_open,.ztree li span.button.ico_close,.ztree li span.button.ico_docu{
+	display: none;
+}

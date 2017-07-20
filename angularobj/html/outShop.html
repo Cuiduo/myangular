@@ -1,0 +1,385 @@
+<style>	
+	.tipBox{
+		display: none;
+		width: 700px;
+		height: 580px;
+		background: #FFFFFF;
+		position: fixed;
+		/*overflow-y: scroll;*/
+		top: 50%;
+		left: 50%;
+		margin-top: -290px;
+		margin-left: -350px;
+		border-radius: 6px;
+		z-index: 1001;
+	}
+	.tipDiv{
+		width: 700px;
+		height: 580px;
+		position: relative;
+		left: 0;
+		top: 0;
+	}
+	.tipBox input,select,textarea{
+		border: 1px solid #C4C4C4;
+		/*border-radius: 5px;*/
+	}
+	.tipBox .tipTop{	
+		width: 700px;
+	}
+	.tipBox .tipTop h3{
+		width: 98%;
+		line-height: 48px;
+		text-align: center;
+		font-size: 18px;
+		font-weight: 500;
+		margin: 0 auto;
+		border-bottom: 1px solid #CCCCCC;
+	}
+	.tipBox .tipTop .closebtn{
+		margin: 10px;
+		float: right;
+		width: 28px;
+		height: 28px;
+		border-radius: 50%;
+		border: none;
+		background: #CCCCCC;
+		font-size: 20px;
+		font-weight: 600;
+		color: #FFFFFF;
+	}
+	.tipBox .tipTop .closebtn:hover{
+		background: #D91600;
+		color: #FFFFFF;
+	}
+	.qqmsg{
+		padding-top: 30px;
+		width: 90%;		
+		margin: 0 auto;	
+		min-height: 90px;	
+	}
+	
+	.qqmsg .qqmsgn{		
+		/*height: 600px;*/
+		width: 100%;
+		margin: 0 auto;
+		min-height: 90px;
+		/*width: 50%;
+		min-height: 90px;
+		float: left;
+		padding-top: 20px;*/
+	}
+	.qqmsg .qqmsgn dl{width: 50%;float: left;line-height: 20px;margin: 10px 0 ;}
+	.qqmsg .qqmsgn dl dt{float: left;width: 30%;margin-left: 0%;}
+	.qqmsg .qqmsgn dl dd{float: left;width: 65%;overflow: hidden;}
+	.usernam{width: ;height: 24px;padding-left: 2px;}
+	.tshi{
+		color: red;
+		margin-left: 10px;
+		display: none;
+	}
+	
+	.selecter{
+		width: ;
+		height: 24px;
+	}
+	
+	
+	#confirm{
+		position: absolute;
+		bottom: 20px;
+		left: 40px;
+		width: 100px;
+		height: 30px;
+		cursor: pointer;
+		color: #FFFFFF;
+		background: red;
+	}
+	#off{
+		position: absolute;
+		right: 10px;
+		bottom:-360px;
+		width: 60px;
+		height: 20px;
+		cursor: pointer;
+	}
+	/*----------------------修改-------------------------*/
+	.tipBox2{
+		display: none;
+		width: 700px;
+		height: 460px;
+		background: #FFFFFF;
+		position: fixed;
+		/*overflow-y: scroll;*/
+		top: 50%;
+		left: 50%;
+		margin-top: -280px;
+		margin-left: -350px;
+		border-radius: 6px;
+		z-index: 1001;
+	}
+	.tipDiv2{
+		width: 700px;
+		height: 460px;
+		position: relative;
+		left: 0;
+		top: 0;
+	}
+	.tipBox2 input,select,textarea{
+		border: 1px solid #C4C4C4;
+		/*border-radius: 5px;*/
+	}
+	.tipBox2 .tipTop{	
+		width: 700px;
+	}
+	.tipBox2 .tipTop h3{
+		width: 98%;
+		line-height: 48px;
+		text-align: center;
+		font-size: 18px;
+		font-weight: 500;
+		margin: 0 auto;
+		border-bottom: 1px solid #CCCCCC;
+	}
+	.tipBox2 .tipTop .closebtn2{
+		margin: 10px;
+		float: right;
+		width: 28px;
+		height: 28px;
+		border-radius: 50%;
+		border: none;
+		background: #CCCCCC;
+		font-size: 20px;
+		font-weight: 600;
+		color: #FFFFFF;
+	}
+	.tipBox2 .tipTop .closebtn2:hover{
+		background: #D91600;
+		color: #FFFFFF;
+	}
+	
+	.qqmsg .qqmsgn dl{width: 50%;float: left;line-height: 20px;margin: 10px 0 ;}
+	.qqmsg .qqmsgn dl dt{float: left;width: 30%;margin-left: 0%;}
+	.qqmsg .qqmsgn dl dd{float: left;width: 65%;overflow: hidden;}
+	.usernam{width: ;height: 24px;}
+	.tshi{
+		color: red;
+		margin-left: 10px;
+		display: none;
+	}
+	
+	.selecter{
+		width: ;
+		height: 24px;
+	}
+	
+	
+	#confirm2{
+		position: absolute;
+		bottom: 60px;
+		left: 40px;
+		width: 100px;
+		height: 30px;
+		cursor: pointer;
+		color: #FFFFFF;
+		background: red;
+	}
+	#off2{
+		position: absolute;
+		right: 10px;
+		bottom:-360px;
+		width: 60px;
+		height: 20px;
+		cursor: pointer;
+	}
+	
+	
+	.main{
+		width: 96%;	
+		margin: 0 auto;
+		border: 1px solid #D8D8D8;
+	}
+	.main .tabBox{
+		width: 100%;
+		min-height: 50px;
+	}
+	.main .tabTop td{
+		text-align: center;
+		line-height: 50px;
+		border-left: 1px solid #D8D8D8;
+		border-bottom: 1px solid #D8D8D8;
+	}
+	.main .tabTop td:nth-of-type(1){
+		
+		border-left: none;
+	}
+	.tabBox td{
+		text-align: center;
+		line-height: 40px;
+		border-left: 1px solid #D8D8D8;
+		border-bottom: 1px solid #D8D8D8;
+	}
+	.tabBox td:nth-of-type(1){
+		border-left: none;
+	}
+	
+	table
+	{
+		table-layout:fixed
+		border-collapse:collapse;
+	}
+	table td
+	{
+		empty-cells : show
+	}
+	/*---------没有搜索数据-----------*/
+	.nomsg{
+		text-align:center;line-height:30px;width:100%
+	}
+	.search{width: 200px;float: right;line-height: 30px;border: 1px solid #AAAAAA;margin-top: 25px;padding-left: 4px;}
+	.seachbtn{width: 66px;float: right;line-height: 30px;margin-top: 25px;border: none;color: #FFFFFF;background: #E40014;}
+	.states{width: 71%;height: 26px;}
+	.sex2{width: 71%;height: 26px;}
+	.juese{width: 71%;height: 26px;}
+	.juese2{width: 71%;height: 26px;}
+	.filer{width: 30%;height: 26px;z-index: 11;position: absolute;left: 0;opacity: 0;filter: alpha(opacity=0);}
+	.posit{position: relative;left: 0;height: 70px;background: pink;}
+	.choosepic{width: 60px;position: absolute;left: 0;z-index: 10;top: 0;border: 1px solid #CCCCCC;}
+	.checkcl,.changecl,.deletecl{
+		cursor: pointer;
+	}
+	.checkcl:hover{
+		color: #2A8AD4;
+	}
+	.changecl:hover{
+		color: #2293C4;
+	}
+	.deletecl:hover{
+		color: #E40014;
+	}
+	.tiplit{color: #FF0000;display: none;}
+	.enterNum{width: 90%;height: 200px;margin: 0 auto;border: 1px solid #D8D8D8;overflow-y: scroll;}
+	.decrition_inp{border: none;outline: none;width: 100%;}
+	.enterNum textarea{width: 100%;height: 200px;border: 1px solid #C4C4C4;}
+	.haomany{border: 1px solid #C4C4C4;}
+	.ts{width: 90%;margin: 0 auto;line-height: 28px;}
+</style>
+<!---------------------删除按钮------------------------>
+		<div class="deleteBox">
+			<h3>提示</h3>
+			<p>确认删除</p>
+			<div class="deleteDiv">
+				<input type="button" class="deleter" id="deleteIt" value="确定" />
+				<input type="button" class="deleter" id="cencel" value="取消" />
+			</div>
+		</div>
+<!-------------------新增弹窗------------------->
+	<div class="tipBox">
+		<div class="tipDiv">
+			<div class="tipTop">
+					<h3>出库<button class="closebtn">×</button></h3>			
+					<!--<input type="button" name="" id="off" value="取消" />-->
+				</div>		
+				
+				<div class="qqmsg">					
+					<div class="qqmsgn">	
+						
+						<dl>
+							<dt>订单号 :<i class="ts1"></i></dt>
+							<dd>							
+								<select class="states providerType" name="">
+									<option value="">--请选择--</option>									
+								</select>
+							</dd>
+						</dl>
+						<dl>
+							<dt>供应商 :</dt>
+							<dd><input readonly="readonly" type="text" class="usernam" value="" />
+							<i class="ts"></i></dd>
+						</dl>
+						<dl>
+							<dt>分类 :</dt>
+							<dd><input readonly="readonly" type="text" class="usernam" value="" />
+							<i class="ts"></i></dd>
+						</dl>
+						<dl>
+							<dt>姓名 :</dt>
+							<dd><input readonly="readonly" type="text" class="usernam " value="" />
+							<i class="ts"></i></dd>
+						</dl>
+						<dl>
+							<dt>联系电话 :</dt>
+							<dd><input readonly="readonly" type="text" class="usernam " value="" />
+							<i class="ts"></i></dd>
+						</dl>
+						<dl>
+							<dt>用户类型 :</dt>
+							<dd><input readonly="readonly" type="text" class="usernam " value="" />
+							<i class="ts"></i></dd>
+						</dl>
+						<dl>
+							<dt>账户名称 :</dt>
+							<dd><input readonly="readonly" type="text" class="usernam " value="" />
+							<i class="ts"></i></dd>
+						</dl>
+						<!--<dl>
+							<dt>详细地址 :</dt>
+							<dd><input readonly="readonly" type="text" class="usernam " value="" />
+							<i class="ts"></i></dd>
+						</dl>-->
+						<dl>
+							<dt>录入设备：</dt>
+							<dd>							
+								<span class="inTotal">1</span> 个 / <span class="haomuch">0</span>个
+							</dd>
+						</dl>
+					</div>	
+					
+				<input type="button" id="confirm" value="确定出库" />
+		</div>
+		<p class="ts"></p>
+		<div class="enterNum qqq">			
+			<input type="tel" style="border: none;"  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" class="decrition_inp" id="text1"/>		
+		</div>
+		</div>
+				
+	</div>
+<!----------------------------修改弹窗--------------------------------->
+
+
+
+
+<!----------------------顶部------------------------>
+<div class="mainTop">
+	<p style="width: 96%;margin: 0 auto;line-height: 30px;border-bottom: 2px solid #B3B3B3;">进销存管理 》 出库管理</p>
+</div>
+
+<!----------------tianjia----------------->
+<section>
+	<div class="topBox">
+		<p>
+			<input type="button" name="editer" id="editer" value="+添加" />
+			<a class="deletebtn">删除</a><span class="tiplit">请选择要删除的选项</span>
+			<button class="seachbtn">搜索</button><input class="search" type="text" placeholder="请输入要搜索的内容" />
+		</p>
+		
+	</div>			
+</section>		
+<!-----------main------------>
+<div class="main">			
+	<div class="tabBox">
+		<table cellpadding="0" cellspacing="0" style="overflow: scroll;word-break: keep-all;width: 100%;" class="tablist"></table>
+	<p class="nomsg"></p>
+	</div>			
+</div>	
+<div class="pageDiv">		
+	<span>
+		去第<input class="pageNum" type="text" />页
+	</span>
+	<span>共<i class="total">0</i>页</span>
+	<span class="ymqd">确定</span>
+</div>
+<div class="tcdPageCode"></div>
+<script src="src/jquery.page.js"></script>
+<script src="src/jquery.cityselect.js"></script>
+<script src="src/jquery-editable-select.min.js"></script>

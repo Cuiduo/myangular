@@ -1,0 +1,294 @@
+<script src="src/jquery.ztree.core.min.js"></script>
+<script src="src/jquery.ztree.excheck.min.js"></script>
+<style>	
+	
+/*=======提示框=======*/	
+.tipBox{
+		display: none;
+		width: 700px;
+		height: 500px;
+		background: #FFFFFF;
+		position: fixed;
+		/*overflow-y: scroll;*/
+		top: 50%;
+		left: 50%;
+		margin-top: -250px;
+		margin-left: -350px;
+		border-radius: 6px;
+		z-index: 1001;
+	}
+	.tipDiv{
+		width: 700px;
+		height: 500px;
+		position: relative;
+		left: 0;
+		top: 0;
+	}
+	.tipBox input,select,textarea{
+		border: 1px solid #C4C4C4;
+		/*border-radius: 5px;*/
+	}
+	.tipBox .tipTop{	
+		width: 700px;
+	}
+	.tipBox .tipTop h3{
+		width: 98%;
+		line-height: 48px;
+		text-align: center;
+		font-size: 18px;
+		font-weight: 500;
+		margin: 0 auto;
+		border-bottom: 1px solid #CCCCCC;
+	}
+	.tipBox .tipTop .closebtn{
+		margin: 10px;
+		float: right;
+		width: 28px;
+		height: 28px;
+		border-radius: 50%;
+		border: none;
+		background: #CCCCCC;
+		font-size: 16px;
+		font-weight: 600;
+		color: #FFFFFF;
+	}
+	.tipBox .tipTop .closebtn:hover{
+		background: #D91600;
+		color: #FFFFFF;
+	}
+	.qqmsg{
+		padding-top: 30px;
+		width: 90%;		
+		margin: 0 auto;	
+		height: 80px;	
+	}
+	
+	.qqmsg .qqmsgn{		
+		/*height: 600px;*/
+		width: 100%;
+		margin: 0 auto;
+		/*width: 50%;
+		min-height: 90px;
+		float: left;
+		padding-top: 20px;*/
+	}
+	.qqmsg .qqmsgn dl{width: 50%;float: left;line-height: 20px;margin: 10px 0 ;}
+	.qqmsg .qqmsgn dl dt{float: left;width: 30%;margin-left: 0%;}
+	.qqmsg .qqmsgn dl dd{float: left;width: 65%;overflow: hidden;}
+	.usernam{width: ;height: 24px;padding-left: 2px;}
+	.tshi{
+		color: red;
+		margin-left: 10px;
+		display: none;
+	}
+	
+	.selecter{
+		width: 80%;
+		height: 24px;
+	}
+	
+	
+	#confirm,.confirm2{
+		position: absolute;
+		bottom: 60px;
+		left: 40px;
+		width: 100px;
+		height: 30px;
+		cursor: pointer;
+		color: #FFFFFF;
+		background: red;
+	}
+	
+	
+	/*-------------------表格-------------------------*/
+	.main{
+		width: 98%;
+		margin: 0 auto;
+	}
+	.main .tabBox{
+		width: 100%;
+		border: 1px solid #E3E6E7;
+	}
+	.main .tabTop td{
+		text-align: center;
+		line-height: 50px;
+		padding: 0 14px;
+		font-size: 16px;
+	}
+	.tabBox td{
+		text-align: center;
+		line-height: 40px;
+		padding: 0 14px;
+		border-left: 1px solid #D8D8D8;
+    border-bottom: 1px solid #D8D8D8;
+	}
+	.tabBox tr:nth-child(even){
+		background: #F9F9F9;
+	}
+	.checkcl,.changecl,.deletecl{
+		cursor: pointer;
+	}	
+	table
+	{
+		border-collapse:collapse;
+	}
+	table td
+	{
+		empty-cells : show
+	}
+	ul.ztree {margin-bottom: 10px;border: 1px solid #CCCCCC;width:90%;margin: 0 auto;height: 200px;overflow: scroll;}
+	.ztree li span.button.ico_open,.ztree li span.button.ico_close,.ztree li span.button.ico_docu{
+		display: none;
+	}
+	table{
+		table-layout : fixed 
+	}
+	table td{
+		display: table-cell;
+	}
+	table td img{
+		vertical-align: middle;
+		border: none;
+		
+	}
+	.sbts{
+		display: none;
+	}
+	#pageTool{
+		position: absolute;
+		bottom: 20px;
+		right: 20px;
+	}
+	#clipDIV{
+		position: absolute;
+		bottom: 20px;
+		right: 0px;
+		/*width:60%;
+		margin:20px 0;*/
+		padding:5px;
+	}
+	
+</style>
+<div class="tipBox">
+			<div class="tipTop">
+				<h3><span class="title">添加</span><button class="closebtn">×</button>
+				</h3>
+				<input type="button" id="confirm" value="确定" />
+				
+			</div>		
+			
+			<div class="qqmsg">				
+				<div class="qqmsgn">					
+					<dl>
+						<dt>权限名称<i class="ts">(必填)</i></dt>
+						<dd>
+							<input class="selecter" type="text" class="" id="name" value="" />
+						</dd>
+					</dl>														
+						
+					<dl>
+						<dt>角色描述<i class="ts2">(必填)</i></dt>
+						<dd>
+							<input class="selecter" type="text" class="" id="url" value="" />
+						</dd>
+					</dl>				
+				</div>
+				<h4 class="sbts">设备权限必选</h4>
+			</div>	
+			<div class="mainBox">
+				<div class="zTreeDemoBackground left">
+					<ul id="treeDemo" class="ztree"></ul>
+				</div>
+				<div class="right" style="display: none;">			
+					被勾选时：<input type="checkbox" id="py" class="checkbox first" checked /><span>关联父</span>
+					<input type="checkbox" id="sy" class="checkbox first" checked /><span>关联子</span>
+					取消勾选时：<input type="checkbox" id="pn" class="checkbox first" checked /><span>关联父</span>
+					<input type="checkbox" id="sn" class="checkbox first" checked /><span>关联子</span>		
+				</div>
+			</div>
+		</div>
+<!--------------------弹窗2--------------------------->
+<div class="tipBox">
+			<div class="tipTop" id="tipTop2">
+				<h3><span class="title">修改</span><button class="closebtn">×</button>
+				</h3>
+				<input type="button" class="confirm2" value="确定" />
+				
+			</div>		
+			
+			<div class="qqmsg">				
+				<div class="qqmsgn">					
+					<dl>
+						<dt>权限名称<i class="ts3">(必填)</i></dt>
+						<dd>
+							<input class="selecter" type="text" class="" id="name2" value="" />
+						</dd>
+					</dl>														
+							
+					<dl>
+						<dt>角色描述<i class="ts4">(必填)</i></dt>
+						<dd>
+							<input class="selecter" type="text" class="" id="url2" value="" />
+						</dd>
+					</dl>				
+				</div>
+			</div>	
+			<div class="mainBox">
+				<div class="zTreeDemoBackground left">
+					<ul id="treeDemo2" class="ztree"></ul>
+				</div>
+				<div class="right" style="display: none;">			
+					被勾选时：<input type="checkbox" id="py" class="checkbox first" checked /><span>关联父</span>
+					<input type="checkbox" id="sy" class="checkbox first" checked /><span>关联子</span>
+					取消勾选时：<input type="checkbox" id="pn" class="checkbox first" checked /><span>关联父</span>
+					<input type="checkbox" id="sn" class="checkbox first" checked /><span>关联子</span>		
+				</div>
+			</div>
+		</div>
+<!---------------------删除按钮------------------------>
+	<div class="deleteBox">
+		<h3>提示</h3>
+		<p>确认删除</p>
+		<div class="deleteDiv">
+			<input type="button" class="deleter" id="deleteIt" value="确定" />
+			<input type="button" class="deleter" id="cencel" value="取消" />
+		</div>
+	</div>
+<!----------------------顶部------------------------>
+<div class="mainTop">
+	<p style="width: 96%;margin: 0 auto;line-height: 30px;border-bottom: 2px solid #B3B3B3;">权限管理 》 角色管理</p>
+</div>	
+<!----------------tianjia----------------->
+<section>
+	<div class="topBox">
+		<p>
+			<input type="button" name="editer" id="editer" value="+添加" />
+			<a class="downbtn">下载</a>			
+			<select class="showNum">
+				<option value="1">展示20条数据</option>
+				<option value="2">展示50条数据</option>
+				<option value="3">展示100条数据</option>
+			</select>
+			<button class="seachbtn">搜索</button><input class="search" type="text" placeholder="请输入要搜索的内容" />
+			
+		</p>
+	</div>			
+</section>		
+<!--------------------内容----------------------->
+	<div class="main">
+		<div class="tabBox">
+			<table cellpadding="0" cellspacing="0" style="overflow: scroll;word-break: keep-all;width: 100%;min-height: 52px;" class="tablist"></table>
+		<p class="nomsg"></p>
+		</div>	
+	</div>
+	<div class="pageDiv">		
+		<span>
+			去第<input class="pageNum" type="text" value="0" />页
+		</span>
+		<span>共<i class="total">0</i>页</span>
+		<span class="ymqd">确定</span>
+	</div>
+	
+	<div class="tcdPageCode"></div>
+	<script src="src/jquery.page.js"></script>
+	

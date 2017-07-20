@@ -1,0 +1,305 @@
+<style>	
+	.tipBox{
+		display: none;
+		width: 700px;
+		height: 360px;
+		background: #FFFFFF;
+		position: fixed;
+		/*overflow-y: scroll;*/
+		top: 50%;
+		left: 50%;
+		margin-top: -180px;
+		margin-left: -350px;
+		border-radius: 6px;
+		z-index: 1001;
+	}
+	.tipDiv{
+		width: 700px;
+		height: 360px;
+		position: relative;
+		left: 0;
+		top: 0;
+	}
+	.tipBox input,select,textarea{
+		border: 1px solid #C4C4C4;
+		/*border-radius: 5px;*/
+	}
+	.tipBox .tipTop{	
+		width: 700px;
+	}
+	.tipBox .tipTop h3{
+		width: 98%;
+		line-height: 48px;
+		text-align: center;
+		font-size: 18px;
+		font-weight: 500;
+		margin: 0 auto;
+		border-bottom: 1px solid #CCCCCC;
+	}
+	.tipBox .tipTop .closebtn{
+		margin: 10px;
+		float: right;
+		width: 28px;
+		height: 28px;
+		border-radius: 50%;
+		border: none;
+		background: #CCCCCC;
+		font-size: 20px;
+		font-weight: 600;
+		color: #FFFFFF;
+	}
+	.tipBox .tipTop .closebtn:hover{
+		background: #D91600;
+		color: #FFFFFF;
+	}
+	.qqmsg{
+		padding-top: 30px;
+		width: 90%;		
+		margin: 0 auto;		
+	}
+	
+	.qqmsg .qqmsgn{		
+		/*height: 600px;*/
+		width: 100%;
+		margin: 0 auto;
+		/*width: 50%;
+		min-height: 90px;
+		float: left;
+		padding-top: 20px;*/
+	}
+	.qqmsg .qqmsgn dl{width: 50%;float: left;line-height: 20px;margin: 10px 0 ;}
+	.qqmsg .qqmsgn dl dt{float: left;width: 30%;margin-left: 0%;}
+	.qqmsg .qqmsgn dl dd{float: left;width: 65%;overflow: hidden;}
+	.usernam{width: ;height: 24px;padding-left: 2px;}
+	.tshi{
+		color: red;
+		margin-left: 10px;
+		display: none;
+	}
+	
+	.selecter{
+		width: 80%;
+		height: 24px;
+	}
+	
+	
+	#confirm,#confirm2{
+		position: absolute;
+		bottom: 60px;
+		left: 40px;
+		width: 100px;
+		height: 30px;
+		cursor: pointer;
+		color: #FFFFFF;
+		background: red;
+	}	
+	
+	/*----页面删除按钮-----*/
+	#container{
+		float: left;
+	}
+	
+	#container1{
+		float: left;
+	}
+	.mainer{
+		width: 96%;
+		margin: 0 auto;
+	}
+	.main .mainBox{
+		width: 98%;
+		margin: 0 auto;
+	}
+	.highcharts-credits{
+		display: none;
+	}
+	.highcharts-button-box{
+		display: none;
+	}
+	table{
+		table-layout : fixed 
+	}
+	table td{
+		display: table-cell;
+	}
+	
+	table td img{
+		vertical-align: middle;
+		border: none;
+		padding-bottom: 5px;
+		padding-left: 10px;
+	}
+	.change img,.delete img{
+		cursor: pointer;
+		width: 20px;
+		height: 20px;
+		vertical-align: middle;
+	}
+	#newtableTree{
+	    height: 700px;
+		overflow-y: scroll;
+		border: 1px solid #E3E6E7;
+		width: 98%;
+		margin: 0 auto;
+	}
+	/*----------------------------------Gridtree--------------------------------*/
+	
+    .juese_box{width: 100%;position: relative;top: 0;left: 0;}
+	.juese_header{width: 100%;height: 50px;}
+	.juese_headcon{width: 920px;margin: 0 auto;line-height:50px;font-size:16px;color:#5a5a5a;border-bottom:1px solid #a3a3a3 ;}
+	.juese_content{width: 100%;margin: 0 auto;}
+	.juese_search{width:100%;height: 70px;padding-top: 30px;position: relative;}
+	.search{position: absolute;top:42px;left: 200px;}
+	.search_input{position: absolute;left: 10px;top: 42px;font-size: 14px;}
+	.add{width: 109px;height: 39px; border:none;background: url(../img/add.png);float: right;}
+	#testTable{width: 860px;height:550;border-collapse:separate;}
+	#_trhead{text-align: center;line-height: 30px;}
+	#testTable tr{height:32px;}
+	/*#testTable thead tr:nth-of-type(1){background: url(../img/beijing.png) top left;color: #fff;font-size: 14px;}*/
+	#testTable thead tr:nth-of-type(1){background: #FFFFFF;font-size: 14px;height: 50px;border-left: 1px solid #D8D8D8;border-bottom: 1px solid #D8D8D8;}
+	/*#testTable thead td:nth-of-type(5){display: none;}*/
+	#testTable td {
+	    line-height: 40px;
+	    border-left: 1px solid #D8D8D8;
+	    border-bottom: 1px solid #D8D8D8;
+	}
+	#testTable tr:nth-of-type(0){border-radius: 5px;}
+	#testTable tr:nth-of-type(2n){}
+	#testTable tr:nth-of-type(2n+1){line-height: 40px; border-left: 1px solid #D8D8D8; border-bottom: 1px solid #D8D8D8;background: #f9f9f9;}
+	.juese_headcon a{color: #5a5a5a;}	
+	 a{color: #000;}
+	.page{width: 860px;margin: 0 auto;}
+	.page span{cursor: pointer;font-size: 14px;}
+	.pagebox{width: 280px;margin: 0 auto;margin-top: 55px;}
+	.pagebox .pre{display:inline-block;width:76px;height: 25px;border: 1px solid #9d9d9d;text-align: center;line-height: 25px;border-radius: 3px  0 0 3px;float: left;}
+	.pagebox .pagenum{display: inline-block; border: 1px solid #9d9d9d;border-left: none;width: 30px;height: 25px;text-align: center;line-height: 25px;float: left;}
+	.pagebox .next{display:inline-block;width:76px;height: 25px;border: 1px solid #9d9d9d;border-left:none;text-align: center;line-height: 25px;border-radius: 0 3px 3px 0;float: left;}
+	.mengban{width: 100%;height: 1036px;background: rgba(148,148,148,0.5);position: absolute;top: 0;left: 0;border-radius: 10px;z-index: 9999;}
+	.add_box{width:600px;height:400px;background:#fff;position: relative;top: 150px;left: 150px;border-radius: 10px 10px 0 0;}
+	.add_box .box_title{height: 55px;font-size:14px;background: #2a8ad4;text-align: center;color: #fff;line-height: 55px;border-radius: 10px 10px 0 0;}
+	.mengban label{font-size: 14px;line-height: 32px;float: left;width: 80px;text-align: center;margin-top: 30px;}
+	.mengban input{height: 30px;float: left;width: 206px;margin-right: 20px;margin-top: 30px;background: #f1f1f1;border-radius: 5px;border: 1px solid #c9c9c9;;}
+	.mengban select{height: 32px;float: left;width: 208px;margin-top: 30px;background: #f1f1f1;border-radius: 5px;}
+	.mengban .form{overflow: hidden;height: 300px;}
+	.mengban .box_bottom{width: 100%;height: 40px;border-top: 1px solid #eeeeee;}
+	.mengban .box_bottom .yes {width: 298px;height: 45px;border: none;border-right: 1px solid #eeeeee;}
+	.mengban .box_bottom .no {width: 298px;height: 45px;border: none;}
+	.mengban1{width: 100%;display:none;height: 1036px;background: rgba(148,148,148,0.5);position: absolute;top: 0;left: 0;border-radius: 10px;z-index: 9999;}
+	.news_show{width: 286px;height: 176px;border-radius: 10px;position: absolute;top: 300px;left: 300px;}
+	.news_con{height: 132px;widows: 100%;border-radius: 10px 10px 0 0;background: #fff;}
+	.news_bottom{width: 100%;background: #fff;border-radius: 0 0 10px 10px;border-top: 1px solid #f0f0f0;}
+	.news_noque .yes_news{font-size:16px;font-weight:600;width: 100%; text-align: center;height: 40px;border: none;border-radius:0 0 10px 10px; color: #8c8c8c;}
+	.news_text{display:block;width:100%;font-size: 16px;color: #525252;text-align: center;line-height: 76px;}
+	.news_text1{display:block;width:100%;font-size: 16px;color: #525252;text-align: center;line-height: 76px;}
+	.news_title{text-align: center;color: #fff;font-size: 18px;font-weight: 600;line-height: 50px;height: 50px;background: #2b89d3;border-radius: 10px 10px 0 0;}
+	.news_show1{width: 286px;height: 176px;border-radius: 10px;position: absolute;top: 300px;left: 300px;}
+	.news_con1{height: 132px;widows: 100%;border-radius: 10px 10px 0 0;background: #fff;}
+	.new_bottom_quxiao .yes_news{font-size:16px;font-weight:600;width: 50%;border-right:1px solid #f0f0f0;text-align: center;height: 40px;border: none;border-radius:0 0 0 10px ; color: #8c8c8c;}
+	.new_bottom_quxiao .no_news{font-size:16px;font-weight:600;width: 49%;text-align: center;height: 40px;border: none;border-radius:0 0  10px 0; color: #8c8c8c;}
+	.juese_xgheadcon a{color: #5a5a5a;}
+	.juese_headcon a{color: #5a5a5a;}
+/*--------------------------------ztree-----------------------------------*/
+	ul.ztree {margin-top: 10px;border: 1px solid #CCCCCC;background: #F0F0F0;width:90%;height:360px;overflow: auto;margin: 0 auto;}
+	.ztree li span.button.ico_open,.ztree li span.button.ico_close,.ztree li span.button.ico_docu{
+	display: none;
+}
+</style>
+<div class="tipBox">
+			<div class="tipTop">
+				<h3>添加<button class="closebtn">×</button>
+				</h3>
+				<input type="button" id="confirm" value="确定" />
+				
+			</div>		
+			<div class="qqmsg"></div>
+			<div class="qqmsg">				
+				<div class="qqmsgn">					
+					<dl>
+						<dt>权限名称<i class="ts">(必填)</i></dt>
+						<dd>
+							<input class="selecter" type="text" class="" id="name" value="" />
+						</dd>
+					</dl>								
+					<dl>
+						<dt>URL<i class="ts2">(必填)</i></dt>
+						<dd>
+							<input class="selecter" type="text" class="" id="url" value="" />
+						</dd>
+					</dl>	
+					<dl>
+						<dt>上级菜单<i class="ts1">(必填)</i></dt>
+						<dd>
+							<select class="selecter" id="parentPermissionId">
+								<option  value="0">0</option>
+								
+							</select>
+						</dd>
+					</dl>
+				</div>
+			</div>			
+		</div>
+<!-------------------------------修改弹窗------------------------------->
+		<div class="tipBox">
+			<div class="tipTop">
+				<h3>修改<button class="closebtn">×</button>
+				</h3>
+				<input type="button" id="confirm2" value="确定" />
+				
+			</div>		
+			<div class="qqmsg"></div>
+			<div class="qqmsg">				
+				<div class="qqmsgn">					
+					<dl>
+						<dt>权限名称<i class="ts">(必填)</i></dt>
+						<dd>
+							<input class="selecter" type="text" class="" id="name2" value="" />
+						</dd>
+					</dl>				
+							
+					<dl>
+						<dt>URL<i class="ts2">(必填)</i></dt>
+						<dd>
+							<input class="selecter" type="text" class="" id="url2" value="" />
+						</dd>
+					</dl>
+					<dl>
+						<dt>上级菜单<i class="ts1">(必填)</i></dt>
+						<dd>
+							<select class="selecter" id="parentPermissionId2">						
+							</select>
+						</dd>
+					</dl>
+				</div>
+			</div>			
+		</div>
+<!---------------------删除按钮------------------------>
+		<div class="deleteBox">
+			<h3>提示</h3>
+			<p>确认删除</p>
+			<div class="deleteDiv">
+				<input type="button" class="deleter" id="deleteIt" value="确定" />
+				<input type="button" class="deleter" id="cencel" value="取消" />
+			</div>
+		</div>
+<!----------------------顶部------------------------>
+<div class="mainTop">
+	<p style="width: 96%;margin: 0 auto;line-height: 30px;border-bottom: 2px solid #B3B3B3;">权限管理 》 用户权限</p>
+</div>
+<!----------------tianjia----------------->
+<section>
+	<div class="topBox">
+		<p>
+			<input type="button" name="editer" id="editer" value="+添加" />
+			<span style="color: #FFFFFF;">2</span>
+		</p>
+	</div>			
+</section>		
+<!--------------------。列表周期图表--------------------->
+<div class="mainer">
+	<div class="mainBox">
+		<div class="juese_content">				
+		<div id='newtableTree' class="juese">					
+		</div>		
+		</div>
+	</div>
+</div>	
